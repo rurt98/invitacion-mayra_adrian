@@ -35,6 +35,10 @@ dist-ssr
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+firebase.json
+.firebaserc
+firestore.rules
+firestore.indexes.json
 
 # TypeScript
 *.tsbuildinfo

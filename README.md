@@ -1,6 +1,6 @@
-# Mayra Adrian App
+# Mayra Adrian App - Sistema de Invitaciones de Boda
 
-Una aplicación React con TypeScript que se conecta a Firebase para leer documentos.
+Una aplicación React con TypeScript que permite crear y gestionar invitaciones de boda personalizadas usando Firebase y enlaces dinámicos.
 
 ## 🚀 Características
 
@@ -10,6 +10,10 @@ Una aplicación React con TypeScript que se conecta a Firebase para leer documen
 - 🎨 Tailwind CSS para estilos modernos y responsive
 - 📱 Diseño mobile-first
 - 🎭 Componentes reutilizables con variantes
+- 💒 Sistema de invitaciones de boda personalizadas
+- 🔗 Enlaces dinámicos únicos para cada invitado
+- 📋 Generador de invitaciones para los novios
+- ✅ Sistema de confirmación de asistencia
 
 ## 📋 Prerrequisitos
 
@@ -42,17 +46,36 @@ Una aplicación React con TypeScript que se conecta a Firebase para leer documen
 
 ## ⚙️ Configuración de Firebase
 
-Edita el archivo `src/firebase.ts` y reemplaza la configuración con tus valores reales:
+### ✅ Configuración Completada
+
+El proyecto ya está configurado con Firebase:
+
+- **Proyecto:** `transportes-barranco-crm`
+- **Configuración:** `src/firebase.ts`
+- **Reglas de seguridad:** Desplegadas y funcionando
+- **Firestore:** Habilitado y configurado
+
+### 🔧 Configuración Actual
 
 ```typescript
 const firebaseConfig = {
-  apiKey: 'tu-api-key-real',
-  authDomain: 'tu-proyecto.firebaseapp.com',
-  projectId: 'tu-project-id',
-  storageBucket: 'tu-proyecto.appspot.com',
-  messagingSenderId: 'tu-messaging-sender-id',
-  appId: 'tu-app-id',
+  apiKey: 'AIzaSyBrbmHTtHrCLxOQZCJUZ-fu58tvnY18sTs',
+  authDomain: 'transportes-barranco-crm.firebaseapp.com',
+  projectId: 'transportes-barranco-crm',
+  storageBucket: 'transportes-barranco-crm.firebasestorage.app',
+  messagingSenderId: '47879059598',
+  appId: '1:47879059598:web:90640f5390d03739ccb1df',
 };
+```
+
+### 🚀 Desplegar Cambios
+
+```bash
+# Desplegar reglas de seguridad
+firebase deploy --only firestore:rules
+
+# Desplegar hosting (cuando esté configurado)
+firebase deploy --only hosting
 ```
 
 ## 🚀 Uso
@@ -87,19 +110,24 @@ yarn lint
 
 ```
 src/
-├── App.tsx                    # Componente principal
+├── App.tsx                    # Componente principal con enrutamiento
 ├── main.tsx                   # Punto de entrada
 ├── index.css                  # Estilos globales con Tailwind
 ├── firebase.ts                # Configuración de Firebase
 └── components/
+    ├── HomePage.tsx           # Página principal con formulario de código
+    ├── InvitacionPage.tsx     # Página de invitación individual
+    ├── GeneradorEnlaces.tsx   # Generador de invitaciones (admin)
     └── ExampleComponent.tsx   # Componente de ejemplo con Tailwind
 ```
 
 ## 🔥 Funcionalidades de Firebase
 
-- **Lectura de documentos:** La app lee automáticamente documentos de una colección
+- **Lectura de documentos:** La app lee automáticamente documentos de la colección "invitados"
 - **Manejo de errores:** Gestión robusta de errores de conexión
 - **Estados de carga:** Indicadores visuales durante la carga de datos
+- **Enlaces dinámicos:** Cada invitación tiene un hash único que identifica el documento
+- **Confirmación de asistencia:** Sistema para que los invitados confirmen su presencia
 
 ## 🎨 Funcionalidades de Tailwind CSS
 
@@ -109,6 +137,15 @@ src/
 - **Animaciones:** Transiciones y hover effects incluidos
 - **Tema personalizable:** Colores primarios y fuentes personalizadas
 - **Configuración optimizada:** Archivos `.cjs` para compatibilidad con ES modules
+
+## 💒 Sistema de Invitaciones de Boda
+
+- **Enlaces únicos:** Cada invitado recibe un enlace personalizado con hash único
+- **Página principal:** Formulario para ingresar el código de invitación
+- **Invitación personalizada:** Muestra información específica del invitado
+- **Confirmación de asistencia:** Sistema para que los invitados confirmen su presencia
+- **Generador de enlaces:** Panel administrativo para crear nuevas invitaciones
+- **Diseño romántico:** Temática de boda con colores y elementos apropiados
 
 ## 🎨 Personalización
 
