@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc, DocumentData } from 'firebase/firestore';
 import { db, checkFirebaseConnection, reconnectFirebase } from '../firebase';
+import imagenSeccion1 from '../assets/1_seccion.jpg';
 
 interface InvitacionData extends DocumentData {
   nombreFamilia: string;
@@ -203,128 +204,149 @@ const InvitacionPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-rose-100">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <button
-            onClick={() => navigate('/')}
-            className="btn btn-secondary mb-6"
-          >
-            ← Volver al Inicio
-          </button>
+    <div className="min-h-screen bg-white">
+      {/* Primera Sección - Imagen de Portada (Mobile First) */}
+      <section className="relative w-full h-screen">
+        <img
+          src={imagenSeccion1}
+          alt="Portada de la invitación"
+          className="w-full h-full object-cover object-center"
+        />
 
-          <div className="text-6xl mb-4">💒</div>
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            Mayra & Adrian
-          </h1>
-          <p className="text-xl text-gray-600">
-            Te invitamos a celebrar nuestro amor
-          </p>
-        </div>
+        {/* Botón de volver */}
+        <button
+          onClick={() => navigate('/')}
+          className="absolute top-4 left-4 bg-white bg-opacity-20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-30 transition-all"
+        >
+          ← Volver
+        </button>
 
-        {/* Invitación */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                ¡Hola, {invitacion.nombreFamilia}!
-              </h2>
-              <p className="text-lg text-gray-600">
-                Estamos emocionados de que formes parte de nuestro día especial
+        {/* Overlay con información básica - POSICIONADO ABAJO */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent pb-8">
+          {/* Layout en ROW: Divider - Texto - Divider */}
+          <div className="flex items-center justify-center space-x-6 px-4">
+            {/* Divider izquierdo */}
+            <div className="w-24 h-0.5 bg-white opacity-60"></div>
+
+            {/* Texto en el centro */}
+            <div className="text-center text-white flex-shrink-0">
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Mayra & Adrian
+              </h1>
+              <p className="text-lg md:text-xl opacity-90">
+                Te invitamos a celebrar nuestro amor
               </p>
             </div>
 
-            {/* Detalles de la invitación */}
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  📋 Detalles de tu Invitación
-                </h3>
-
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="font-medium text-gray-700">Familia:</span>
-                    <span className="text-gray-900">
-                      {invitacion.nombreFamilia}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="font-medium text-gray-700">
-                      Invitados:
-                    </span>
-                    <span className="text-gray-900">
-                      {invitacion.numPersonas} persona(s)
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="font-medium text-gray-700">Código:</span>
-                    <span className="text-gray-900 font-mono">{hash}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  📅 Información del Evento
-                </h3>
-
-                <div className="space-y-3">
-                  <div className="p-4 bg-pink-50 rounded-lg border-l-4 border-pink-400">
-                    <h4 className="font-semibold text-pink-800 mb-2">
-                      Fecha y Hora
-                    </h4>
-                    <p className="text-pink-700">15 de Diciembre, 2024</p>
-                    <p className="text-pink-700">7:00 PM</p>
-                  </div>
-
-                  <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                    <h4 className="font-semibold text-blue-800 mb-2">Lugar</h4>
-                    <p className="text-blue-700">
-                      Salón de Eventos "El Paraíso"
-                    </p>
-                    <p className="text-blue-700">Av. Principal #123, Ciudad</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Información adicional */}
-            <div className="text-center space-y-4">
-              <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                <p className="text-green-800 font-medium">
-                  ✅ ¡Tu invitación ha sido cargada exitosamente!
-                </p>
-                <p className="text-green-600 text-sm mt-1">
-                  Estamos emocionados de que {invitacion.numPersonas} persona(s)
-                  de la familia {invitacion.nombreFamilia}
-                  puedan acompañarnos en este día tan especial.
-                </p>
-              </div>
-
-              <button
-                onClick={() => navigate('/')}
-                className="btn btn-secondary"
-              >
-                Nueva Invitación
-              </button>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center text-gray-500">
-            <p>Para cualquier consulta, contacta a los novios</p>
-            <p className="text-sm mt-1">
-              Código de invitación:{' '}
-              <span className="font-mono bg-gray-100 px-2 py-1 rounded">
-                {hash}
-              </span>
-            </p>
+            {/* Divider derecho */}
+            <div className="w-24 h-0.5 bg-white opacity-60"></div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Segunda Sección - Detalles de la Invitación */}
+      <section className="px-4 py-8 bg-gradient-to-br from-pink-50 to-rose-100">
+        <div className="max-w-md mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              ¡Hola, {invitacion.nombreFamilia}!
+            </h2>
+            <p className="text-lg text-gray-600">
+              Estamos emocionados de que formes parte de nuestro día especial
+            </p>
+          </div>
+
+          {/* Detalles de la invitación */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+              📋 Detalles de tu Invitación
+            </h3>
+
+            <div className="space-y-4">
+              <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span className="font-medium text-gray-700">Familia:</span>
+                <span className="text-gray-900 font-semibold">
+                  {invitacion.nombreFamilia}
+                </span>
+              </div>
+
+              <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span className="font-medium text-gray-700">Invitados:</span>
+                <span className="text-gray-900 font-semibold">
+                  {invitacion.numPersonas} persona(s)
+                </span>
+              </div>
+
+              <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span className="font-medium text-gray-700">Código:</span>
+                <span className="text-gray-900 font-mono text-sm">{hash}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Información del evento */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+              📅 Información del Evento
+            </h3>
+
+            <div className="space-y-4">
+              <div className="p-4 bg-pink-50 rounded-lg border-l-4 border-pink-400">
+                <h4 className="font-semibold text-pink-800 mb-2">
+                  Fecha y Hora
+                </h4>
+                <p className="text-pink-700 font-medium">
+                  15 de Diciembre, 2024
+                </p>
+                <p className="text-pink-700">7:00 PM</p>
+              </div>
+
+              <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                <h4 className="font-semibold text-blue-800 mb-2">Lugar</h4>
+                <p className="text-blue-700 font-medium">
+                  Salón de Eventos "El Paraíso"
+                </p>
+                <p className="text-blue-700">Av. Principal #123, Ciudad</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mensaje de confirmación */}
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+            <p className="text-green-800 font-medium text-lg mb-3">
+              ✅ ¡Tu invitación ha sido cargada exitosamente!
+            </p>
+            <p className="text-green-600 text-sm">
+              Estamos emocionados de que {invitacion.numPersonas} persona(s) de
+              la familia {invitacion.nombreFamilia}
+              puedan acompañarnos en este día tan especial.
+            </p>
+          </div>
+
+          {/* Botón de nueva invitación */}
+          <div className="mt-6 text-center">
+            <button
+              onClick={() => navigate('/')}
+              className="btn btn-primary w-full"
+            >
+              Nueva Invitación
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-6 px-4">
+        <p className="text-sm mb-2">
+          Para cualquier consulta, contacta a los novios
+        </p>
+        <p className="text-xs text-gray-400">
+          Código de invitación:{' '}
+          <span className="font-mono bg-gray-700 px-2 py-1 rounded">
+            {hash}
+          </span>
+        </p>
+      </footer>
     </div>
   );
 };
