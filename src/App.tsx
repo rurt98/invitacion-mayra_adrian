@@ -4,6 +4,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import './App.css';
 import HomePage from './components/HomePage';
 import InvitacionPage from './components/InvitacionPage';
 

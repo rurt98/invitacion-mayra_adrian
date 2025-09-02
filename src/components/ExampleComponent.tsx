@@ -22,7 +22,7 @@ const ExampleComponent: React.FC<ExampleComponentProps> = ({
       className={`card border-l-4 ${variantStyles[variant]} transition-all duration-300 hover:scale-105`}
     >
       <div className="flex items-start space-x-4">
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center ${
               variant === 'primary'

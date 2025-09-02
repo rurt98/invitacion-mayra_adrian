@@ -304,7 +304,7 @@ const InvitacionPage = () => {
             <div className="space-y-2 text-sm">
               <p className="text-[#60593C]">
                 <strong>Hash/ID:</strong>{' '}
-                <span className="font-mono bg-[#F9F5ED] px-2 py-1 rounded text-xs">
+                <span className="font-mono bg-[#F9F5ED] px-2 py-1 rounded-sm text-xs">
                   {hash}
                 </span>
               </p>
@@ -400,7 +400,7 @@ const InvitacionPage = () => {
       {/* Botón de volver */}
       {/* <button
         onClick={() => navigate('/')}
-        className="absolute top-4 left-4 bg-white bg-opacity-20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-30 transition-all"
+        className="absolute top-4 left-4 bg-white bg-opacity-20 backdrop-blur-xs text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-30 transition-all"
       >
         ← Volver
       </button> */}
@@ -645,7 +645,7 @@ const InvitacionPage = () => {
             <div className="flex flex-col items-center pb-10">
               <button
                 onClick={handleSugerenciaRuta}
-                className="bg-[#60593C] py-1 px-2 rounded-sm mb-1 w-fit mx-auto hover:bg-[#4A4530] transition-colors duration-200"
+                className="bg-[#60593C] py-1 px-2 rounded-xs mb-1 w-fit mx-auto hover:bg-[#4A4530] transition-colors duration-200"
               >
                 <p className="text-[#F9F5ED]  font-thin leading-tight text-xs">
                   SUGERENCIA DE RUTA
@@ -658,7 +658,7 @@ const InvitacionPage = () => {
             <div className="flex flex-col items-center pb-10">
               <button
                 onClick={handleSugerenciaHospedaje}
-                className="bg-[#60593C] py-1 px-2 rounded-sm mb-1 w-fit mx-auto hover:bg-[#4A4530] transition-colors duration-200"
+                className="bg-[#60593C] py-1 px-2 rounded-xs mb-1 w-fit mx-auto hover:bg-[#4A4530] transition-colors duration-200"
               >
                 <p className="text-[#F9F5ED]  font-thin leading-tight text-xs">
                   SUGERENCIA HOSPEDAJE

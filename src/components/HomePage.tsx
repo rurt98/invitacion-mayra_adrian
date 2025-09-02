@@ -78,7 +78,7 @@ const HomePage = () => {
                 value={hash}
                 onChange={(e) => setHash(e.target.value)}
                 placeholder="Ej: 025mqlyYA9Gp3bPOvuEb"
-                className="w-full px-4 py-3 rounded-lg border-2 border-[#A39D79] bg-[#F9F5ED] text-[#312E25] text-center font-mono tracking-wider focus:border-[#60593C] focus:outline-none"
+                className="w-full px-4 py-3 rounded-lg border-2 border-[#A39D79] bg-[#F9F5ED] text-[#312E25] text-center font-mono tracking-wider focus:border-[#60593C] focus:outline-hidden"
                 autoFocus
               />
               {error && <p className="text-[#60593C] text-sm mt-2">{error}</p>}

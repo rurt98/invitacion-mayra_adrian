@@ -12,9 +12,9 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'esbuild', // Cambiar de terser a esbuild para evitar problemas con Rollup
+    minify: 'esbuild',
     cssCodeSplit: false, // Importante para Tailwind CSS
-    cssMinify: true, // Minificar CSS específicamente
+    cssMinify: false, // Deshabilitar minificación de CSS para Vercel
     rollupOptions: {
       output: {
         manualChunks: {

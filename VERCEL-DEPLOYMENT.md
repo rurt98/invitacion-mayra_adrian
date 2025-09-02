@@ -89,7 +89,11 @@ NODE_ENV=production
    - **Solución**: Configuración robusta con `safelist` completo, `vercel-build` script específico, y configuración optimizada de Vite
 
 9. **Error de Rollup en Vercel**: `Cannot find module '@rollup/rollup-linux-x64-gnu'`
+
    - **Solución**: Cambio de `terser` a `esbuild` como minificador y configuración de `@vercel/static-build`
+
+10. **Tailwind CSS persistente en Vercel**: Clases personalizadas no se aplicaban en producción
+    - **Solución**: Configuración definitiva con `purge: false`, `cssMinify: false`, y `safelist` completo
 
 ## 🔍 Verificación Post-Despliegue
 
@@ -109,6 +113,8 @@ NODE_ENV=production
 14. ✅ Configuración robusta para Vercel implementada
 15. ✅ Error de Rollup solucionado con esbuild
 16. ✅ Build optimizado para Vercel funcionando
+17. ✅ Clases personalizadas confirmadas en CSS generado
+18. ✅ Configuración definitiva para Vercel implementada
 
 ## 🛠️ Comandos Útiles
 

@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@config '../tailwind.config.cjs';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Componentes personalizados */
+@utility btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+@utility btn-primary {
+  @apply bg-pink-600 text-white hover:bg-pink-700 shadow-lg hover:shadow-xl;
+}
+@utility btn-secondary {
+  @apply bg-gray-600 text-white hover:bg-gray-700 shadow-lg hover:shadow-xl;
+}
+@utility card {
+  @apply bg-white rounded-xl shadow-lg p-6;
+}
+@utility input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200;
+}
+
+@layer utilities {
+  /* Importar fuentes Adobe - Comentado temporalmente para Vercel */
+  /*
+@font-face {
+  font-family: 'Mrs Eaves';
+  src: url('./fonts/MrsEaves-RomanLining.woff2') format('woff2'),
+    url('./fonts/MrsEaves-RomanLining.woff') format('woff'),
+    url('./fonts/MrsEaves-RomanLining.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montblanc';
+  src: url('./fonts/Montblanc-Regular.woff2') format('woff2'),
+    url('./fonts/Montblanc-Regular.woff') format('woff'),
+    url('./fonts/Montblanc-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+  /* Variables CSS para las fuentes */
+  :root {
+    --font-primary: 'Georgia', 'Times New Roman', serif;
+    --font-secondary: 'Arial', 'Helvetica', sans-serif;
+  }
+
+  /* Aplicar fuentes por defecto */
+  body {
+    font-family: var(--font-primary);
+  }
+
+  /* Clases de utilidad para las fuentes */
+  .font-primary {
+    font-family: var(--font-primary);
+  }
+
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
+
+  /* Estilos base personalizados */
+}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-primary);
+  }
+
+  p,
+  span,
+  div {
+    font-family: var(--font-primary);
+  }
+
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
+}

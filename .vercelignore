@@ -43,3 +43,4 @@ src/fonts/
 !vite.config.ts
 !package.json
 !tsconfig.json
+!vercel.json
