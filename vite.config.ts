@@ -12,7 +12,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // Cambiar de terser a esbuild para evitar problemas con Rollup
     cssCodeSplit: false, // Importante para Tailwind CSS
     cssMinify: true, // Minificar CSS específicamente
     rollupOptions: {

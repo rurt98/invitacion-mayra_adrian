@@ -85,7 +85,11 @@ NODE_ENV=production
    - **Solución**: Configuración específica de `vercel.json` con `@vercel/static-build` y script de build personalizado
 
 8. **Tailwind CSS no funciona en Vercel**: Clases personalizadas no se aplicaban
+
    - **Solución**: Configuración robusta con `safelist` completo, `vercel-build` script específico, y configuración optimizada de Vite
+
+9. **Error de Rollup en Vercel**: `Cannot find module '@rollup/rollup-linux-x64-gnu'`
+   - **Solución**: Cambio de `terser` a `esbuild` como minificador y configuración de `@vercel/static-build`
 
 ## 🔍 Verificación Post-Despliegue
 
@@ -103,6 +107,8 @@ NODE_ENV=production
 12. ✅ Script de build personalizado creado
 13. ✅ Clases personalizadas de Tailwind generadas correctamente
 14. ✅ Configuración robusta para Vercel implementada
+15. ✅ Error de Rollup solucionado con esbuild
+16. ✅ Build optimizado para Vercel funcionando
 
 ## 🛠️ Comandos Útiles
 
