@@ -7,7 +7,7 @@ import bgImage from '../assets/bg.png';
 import letraM from '../assets/M.svg';
 import letraA from '../assets/A.png';
 import icono1 from '../assets/Icono_1.svg';
-import detalles from '../assets/Detalles.svg';
+import detalles from '../assets/detalles-decorativos.svg';
 import logoNovios from '../assets/Logo Novios_1.svg';
 import itinerario from '../assets/Itinerario.svg';
 import header_2 from '../assets/header_2.svg';
