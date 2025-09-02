@@ -81,7 +81,11 @@ NODE_ENV=production
    - **Solución**: Configurado `cssCodeSplit: false` en `vite.config.ts` y agregado `safelist` en `tailwind.config.cjs`
 
 7. **CSS no se muestra en Vercel**: Problema específico de configuración de Vercel
+
    - **Solución**: Configuración específica de `vercel.json` con `@vercel/static-build` y script de build personalizado
+
+8. **Tailwind CSS no funciona en Vercel**: Clases personalizadas no se aplicaban
+   - **Solución**: Configuración robusta con `safelist` completo, `vercel-build` script específico, y configuración optimizada de Vite
 
 ## 🔍 Verificación Post-Despliegue
 
@@ -97,6 +101,8 @@ NODE_ENV=production
 10. ✅ Estilos personalizados se aplican correctamente
 11. ✅ Configuración específica de Vercel implementada
 12. ✅ Script de build personalizado creado
+13. ✅ Clases personalizadas de Tailwind generadas correctamente
+14. ✅ Configuración robusta para Vercel implementada
 
 ## 🛠️ Comandos Útiles
 

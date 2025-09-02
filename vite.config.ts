@@ -30,6 +30,12 @@ export default defineConfig({
       },
     },
   },
+  // Configuración específica para Vercel
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(
+      process.env.NODE_ENV || 'production'
+    ),
+  },
   css: {
     postcss: './postcss.config.cjs',
   },
