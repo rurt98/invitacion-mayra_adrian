@@ -1,0 +1,81 @@
+# 🚀 Despliegue en Vercel - Invitación de Boda
+
+## 📋 Configuración Completada
+
+### ✅ Archivos de Configuración Creados:
+
+- `vercel.json` - Configuración principal de Vercel
+- `env.example` - Variables de entorno de ejemplo
+- `.vercelignore` - Archivos a ignorar en el despliegue
+- `vite.config.ts` - Optimizado para producción
+
+### ✅ Optimizaciones Implementadas:
+
+- **Code Splitting**: Chunks separados para vendor, firebase, y router
+- **Minificación**: Terser para optimización de código
+- **Assets**: Directorio optimizado para assets
+- **SPA Routing**: Configuración para Single Page Application
+
+## 🔧 Variables de Entorno
+
+Configura las siguientes variables en Vercel:
+
+```bash
+# Firebase Configuration
+VITE_FIREBASE_API_KEY=tu_api_key_aqui
+VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain_aqui
+VITE_FIREBASE_PROJECT_ID=tu_project_id_aqui
+VITE_FIREBASE_STORAGE_BUCKET=tu_storage_bucket_aqui
+VITE_FIREBASE_MESSAGING_SENDER_ID=tu_messaging_sender_id_aqui
+VITE_FIREBASE_APP_ID=tu_app_id_aqui
+
+# Environment
+NODE_ENV=production
+```
+
+## 🚀 Pasos para Desplegar
+
+1. **Conectar repositorio** a Vercel
+2. **Configurar variables de entorno** en el dashboard de Vercel
+3. **Configurar build settings**:
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+4. **Desplegar** automáticamente
+
+## 📊 Optimizaciones de Rendimiento
+
+- **Chunks separados**: Mejor caching y carga paralela
+- **Minificación**: Código optimizado para producción
+- **Assets optimizados**: Imágenes y SVGs comprimidos
+- **Firebase optimizado**: Chunk separado para Firebase
+
+## 🔍 Verificación Post-Despliegue
+
+1. ✅ Aplicación carga correctamente
+2. ✅ Firebase se conecta sin errores
+3. ✅ Rutas funcionan (SPA routing)
+4. ✅ Assets se cargan correctamente
+5. ✅ Botones de redirección funcionan
+
+## 🛠️ Comandos Útiles
+
+```bash
+# Construcción local
+npm run build
+
+# Preview local
+npm run preview
+
+# Desarrollo
+npm run dev
+```
+
+## 📱 Funcionalidades
+
+- ✅ HomePage con formulario de código
+- ✅ InvitacionPage con datos dinámicos
+- ✅ Redireccionamientos a Google Maps
+- ✅ Integración con WhatsApp
+- ✅ Diseño responsive
+- ✅ Firebase Firestore integrado
