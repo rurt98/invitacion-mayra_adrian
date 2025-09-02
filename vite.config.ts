@@ -17,13 +17,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          firebase: ['firebase/app', 'firebase/firestore'],
           router: ['react-router-dom'],
         },
       },
     },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'firebase'],
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: ['firebase'],
   },
 });

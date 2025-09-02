@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importar fuentes Adobe */
+/* Importar fuentes Adobe - Comentado temporalmente para Vercel */
+/*
 @font-face {
   font-family: 'Mrs Eaves';
   src: url('./fonts/MrsEaves-RomanLining.woff2') format('woff2'),
@@ -22,11 +23,12 @@
   font-style: normal;
   font-display: swap;
 }
+*/
 
 /* Variables CSS para las fuentes */
 :root {
-  --font-primary: 'Mrs Eaves', serif;
-  --font-secondary: 'Montblanc', sans-serif;
+  --font-primary: 'Georgia', 'Times New Roman', serif;
+  --font-secondary: 'Arial', 'Helvetica', sans-serif;
 }
 
 /* Aplicar fuentes por defecto */

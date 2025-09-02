@@ -8,6 +8,7 @@
 - `env.example` - Variables de entorno de ejemplo
 - `.vercelignore` - Archivos a ignorar en el despliegue
 - `vite.config.ts` - Optimizado para producción
+- `.nvmrc` - Versión de Node.js especificada
 
 ### ✅ Optimizaciones Implementadas:
 
@@ -15,6 +16,7 @@
 - **Minificación**: Terser para optimización de código
 - **Assets**: Directorio optimizado para assets
 - **SPA Routing**: Configuración para Single Page Application
+- **Fuentes**: Comentadas temporalmente para evitar errores de build
 
 ## 🔧 Variables de Entorno
 
@@ -50,6 +52,29 @@ NODE_ENV=production
 - **Assets optimizados**: Imágenes y SVGs comprimidos
 - **Firebase optimizado**: Chunk separado para Firebase
 
+## 🔧 Correcciones Realizadas
+
+### ❌ Problemas Identificados y Solucionados:
+
+1. **Fuentes faltantes**: El directorio `src/fonts/` estaba vacío pero el CSS intentaba cargar fuentes
+
+   - **Solución**: Comentadas las fuentes en `src/index.css` y configuradas fuentes del sistema como fallback
+
+2. **Configuración de Vercel**: Configuración inicial incorrecta para aplicaciones React
+
+   - **Solución**: Simplificada la configuración en `vercel.json` para aplicaciones estáticas
+
+3. **Dependencias**: Faltaba `terser` para minificación
+
+   - **Solución**: Instalado `terser` como dependencia de desarrollo
+
+4. **Node.js**: Versión no especificada
+
+   - **Solución**: Creado `.nvmrc` con versión 18
+
+5. **Firebase en desarrollo**: Error de resolución de paquete Firebase
+   - **Solución**: Excluido Firebase de `optimizeDeps` en `vite.config.ts`
+
 ## 🔍 Verificación Post-Despliegue
 
 1. ✅ Aplicación carga correctamente
@@ -57,6 +82,9 @@ NODE_ENV=production
 3. ✅ Rutas funcionan (SPA routing)
 4. ✅ Assets se cargan correctamente
 5. ✅ Botones de redirección funcionan
+6. ✅ Build sin errores de fuentes
+7. ✅ Servidor de desarrollo funciona correctamente
+8. ✅ Firebase se resuelve correctamente en desarrollo y producción
 
 ## 🛠️ Comandos Útiles
 
