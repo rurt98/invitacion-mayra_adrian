@@ -1,0 +1,10 @@
+{
+  "orgId": "vercel",
+  "projectId": "mayra-adrian-invitation",
+  "settings": {
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "installCommand": "npm install",
+    "framework": "vite"
+  }
+}

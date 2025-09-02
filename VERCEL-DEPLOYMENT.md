@@ -77,7 +77,11 @@ NODE_ENV=production
    - **Solución**: Excluido Firebase de `optimizeDeps` en `vite.config.ts`
 
 6. **Tailwind CSS en producción**: Estilos no se aplicaban correctamente en Vercel
+
    - **Solución**: Configurado `cssCodeSplit: false` en `vite.config.ts` y agregado `safelist` en `tailwind.config.cjs`
+
+7. **CSS no se muestra en Vercel**: Problema específico de configuración de Vercel
+   - **Solución**: Configuración específica de `vercel.json` con `@vercel/static-build` y script de build personalizado
 
 ## 🔍 Verificación Post-Despliegue
 
@@ -91,6 +95,8 @@ NODE_ENV=production
 8. ✅ Firebase se resuelve correctamente en desarrollo y producción
 9. ✅ Tailwind CSS se genera correctamente en producción
 10. ✅ Estilos personalizados se aplican correctamente
+11. ✅ Configuración específica de Vercel implementada
+12. ✅ Script de build personalizado creado
 
 ## 🛠️ Comandos Útiles
 

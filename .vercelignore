@@ -35,3 +35,8 @@ VERCEL-DEPLOYMENT.md
 
 # Fonts directory (empty)
 src/fonts/
+
+# Keep CSS files for Vercel
+!src/index.css
+!tailwind.config.cjs
+!postcss.config.cjs

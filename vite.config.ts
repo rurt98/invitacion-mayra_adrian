@@ -14,6 +14,7 @@ export default defineConfig({
     sourcemap: false,
     minify: 'terser',
     cssCodeSplit: false, // Importante para Tailwind CSS
+    cssMinify: true, // Minificar CSS específicamente
     rollupOptions: {
       output: {
         manualChunks: {
@@ -28,6 +29,9 @@ export default defineConfig({
         },
       },
     },
+  },
+  css: {
+    postcss: './postcss.config.cjs',
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
