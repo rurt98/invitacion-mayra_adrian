@@ -73,7 +73,11 @@ NODE_ENV=production
    - **Solución**: Creado `.nvmrc` con versión 18
 
 5. **Firebase en desarrollo**: Error de resolución de paquete Firebase
+
    - **Solución**: Excluido Firebase de `optimizeDeps` en `vite.config.ts`
+
+6. **Tailwind CSS en producción**: Estilos no se aplicaban correctamente en Vercel
+   - **Solución**: Configurado `cssCodeSplit: false` en `vite.config.ts` y agregado `safelist` en `tailwind.config.cjs`
 
 ## 🔍 Verificación Post-Despliegue
 
@@ -85,6 +89,8 @@ NODE_ENV=production
 6. ✅ Build sin errores de fuentes
 7. ✅ Servidor de desarrollo funciona correctamente
 8. ✅ Firebase se resuelve correctamente en desarrollo y producción
+9. ✅ Tailwind CSS se genera correctamente en producción
+10. ✅ Estilos personalizados se aplican correctamente
 
 ## 🛠️ Comandos Útiles
 
