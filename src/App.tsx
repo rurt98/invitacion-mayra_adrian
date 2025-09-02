@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import InvitacionPage from './components/InvitacionPage';
-import GeneradorEnlaces from './components/GeneradorEnlaces';
 
 function App() {
   return (
@@ -20,7 +19,7 @@ function App() {
           <Route path="/invitacion/:hash" element={<InvitacionPage />} />
 
           {/* Ruta para generar enlaces (para los novios) */}
-          <Route path="/admin/generar" element={<GeneradorEnlaces />} />
+          {/* <Route path="/admin/generar" element={<GeneradorEnlaces />} /> */}
 
           {/* Ruta por defecto - redirigir al inicio */}
           <Route path="*" element={<Navigate to="/" replace />} />
