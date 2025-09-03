@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: '/', // Usar rutas absolutas para mejor compatibilidad con Firebase Hosting
+  publicDir: 'public', // Directorio público para assets estáticos
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 1000,

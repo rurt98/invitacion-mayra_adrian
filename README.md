@@ -1,4 +1,4 @@
-# Mayra Adrian App - Sistema de Invitaciones de Boda
+# Mayra & Adrian - Sistema de Invitaciones de Boda
 
 Una aplicación React con TypeScript que permite crear y gestionar invitaciones de boda personalizadas usando Firebase y enlaces dinámicos.
 
@@ -99,6 +99,26 @@ yarn build
 ```bash
 yarn preview
 ```
+
+## 📊 Scripts de Exportación
+
+El proyecto incluye scripts para exportar datos de invitados a Excel:
+
+### Exportación Básica
+
+```bash
+npm run export-invitados
+```
+
+### Exportación con Filtros
+
+```bash
+npm run export-invitados-filtrado -- --min-personas=4
+npm run export-invitados-filtrado -- --max-personas=2 --orden=desc
+npm run export-invitados-filtrado -- --campos-extra
+```
+
+Para más detalles, consulta [EXPORTAR-INVITADOS.md](./EXPORTAR-INVITADOS.md).
 
 ### Linting
 
