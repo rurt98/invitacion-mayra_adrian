@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Usar rutas relativas para mejor compatibilidad con Vercel
+  base: '/', // Usar rutas absolutas para mejor compatibilidad con Firebase Hosting
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 1000,
