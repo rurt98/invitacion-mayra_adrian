@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import InvitacionPage from './components/InvitacionPage';
+import InvitacionSimple from './components/InvitacionSimple';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
 
           {/* Ruta para ver invitaciones individuales */}
           <Route path="/invitacion/:hash" element={<InvitacionPage />} />
+          {/* Ruta simple sin Firebase */}
+          <Route path="/invitacion-simple" element={<InvitacionSimple />} />
 
           {/* Ruta para generar enlaces (para los novios) */}
           {/* <Route path="/admin/generar" element={<GeneradorEnlaces />} /> */}
