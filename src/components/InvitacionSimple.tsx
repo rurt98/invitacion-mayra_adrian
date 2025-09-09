@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import imagenSeccion1 from '../assets/1_seccion.jpg';
 import bgImage from '../assets/bg.png';
 import letraM from '../assets/M.svg';
@@ -28,7 +28,7 @@ import selloLogo from '../assets/Sello logo.svg';
 import mayraPerez from '../assets/Mayra Pérez.svg';
 
 const InvitacionSimple = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // Funciones de redirección
   const handleCeremoniaUbicacion = () => {
